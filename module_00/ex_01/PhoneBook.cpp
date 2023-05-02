@@ -43,10 +43,47 @@ void	PhoneBook::ADD(void)
 		}
 	}
 	this->setContact();
-	if (this->i == 8)
+	if (this->i == 7)
 		this->i = 0;
 	else
 		this->i++;
+	system("clear");
+}
+
+void PhoneBook::printParameter(std::string str)
+{
+	if (str.length() <= 10) {
+		std::cout << std::setw(10) << str;
+		return ;
+	}
+	std::cout << str.substr(0, 9);
+	std::cout << ".";
+	return ;
+}
+
+void PhoneBook::printTableContent(int index)
+{
+	std::cout << "|         ";
+	std::cout << index;
+	std::cout << '|';
+	printParameter(this->contact[index].getFirstName());
+	std::cout << '|';
+	printParameter(this->contact[index].getLastName());
+	std::cout << '|';
+	printParameter(this->contact[index].getNickname());
+	std::cout << '|' << std::endl;
+}
+
+void PhoneBook::printTableHeader(void)
+{
+	std::cout << "|     index|First Name| Last Name|  Nickname|" << '\n';
+	std::cout << "|----------|----------|----------|----------|" << '\n';
+	for(int i = 0; i < 8; i++) {
+		if (this->contact[i].getFirstName().empty())
+			return ;
+		printTableContent(i);
+		std::cout << "|----------|----------|----------|----------|" << '\n';
+	}
 }
 
 void	PhoneBook::SEARCH(void)
@@ -58,6 +95,7 @@ void	PhoneBook::SEARCH(void)
 		std::cout << "Empty PhoneBook" << std::endl;
 		return ;
 	}
+	printTableHeader();
 	std::cout << "Enter an index of your choice" << std::endl;
     std::cin >> option;
 	if (option < 0 || option > 7) {
@@ -65,7 +103,7 @@ void	PhoneBook::SEARCH(void)
 		return ;
 	}
 	if (this->contact[option].getFirstName().empty()) {
-		std::cout << "Contact doesnt exit" << std::endl;
+		std::cout << "Contact doesnt exist" << std::endl;
 		return ;
 	}
 	std::cout << this->contact[option].getFirstName() << std::endl;

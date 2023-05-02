@@ -1,6 +1,8 @@
 #include "PhoneBook.hpp"
 
-int main(void) {
+int main(void)
+{
+    system("clear");
     std::string input = "";
     PhoneBook phoneBook;
 
