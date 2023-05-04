@@ -6,15 +6,12 @@ int main(void)
     std::string input = "";
     PhoneBook phoneBook;
 
-    while (!std::cin.eof())
+    while (1)
     {
         std::cout << "Enter add, search or exit\n";
         getline(std::cin, input);
         if (std::cin.eof())
             return (1);
-        for (int i = 0; input[i] != '\0'; i++) {
-            input[i] = (char)tolower(input[i]);
-        }
         if (input == "add")
             phoneBook.ADD();
         else if (input == "search")

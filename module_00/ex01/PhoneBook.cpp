@@ -98,6 +98,10 @@ void	PhoneBook::SEARCH(void)
 	printTableHeader();
 	std::cout << "Enter an index of your choice" << std::endl;
     std::cin >> option;
+	if (std::cin.fail()) {
+        std::cout << "The string enter must be a number" << std::endl;
+        return ;
+    }
 	if (option < 0 || option > 7) {
 		std::cout << "Option is out of range" << std::endl;
 		return ;
