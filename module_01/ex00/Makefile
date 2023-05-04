@@ -1,4 +1,7 @@
-SRC		=	megaphone.cpp
+SRC		=	main.cpp \
+			Zombie.cpp \
+			newZombie.cpp \
+			randomChump.cpp
 
 OBJ		=	$(SRC:.cpp=.o)
 
