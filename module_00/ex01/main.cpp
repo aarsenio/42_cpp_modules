@@ -9,7 +9,7 @@ int main(void)
     while (1)
     {
         std::cout << "Enter add, search or exit\n";
-        getline(std::cin, input);
+        getline(std::cin >> std::ws, input);
         if (std::cin.eof())
             return (1);
         if (input == "add")
