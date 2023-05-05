@@ -32,7 +32,7 @@ void	PhoneBook::ADD(void)
 {
 	system("clear");
 	this->setElement("Enter the first name: ", 0);
-    this->setElement("Enter the last yame: ", 1);
+    this->setElement("Enter the last name: ", 1);
     this->setElement("Enter the nickname: ", 2);
     this->setElement("Enter the phone number: ", 3);
     this->setElement("Enter the darkest secret: ", 4);
@@ -110,9 +110,9 @@ void	PhoneBook::SEARCH(void)
 		std::cout << "Contact doesnt exist" << std::endl;
 		return ;
 	}
-	std::cout << this->contact[option].getFirstName() << std::endl;
-	std::cout << this->contact[option].getLastName() << std::endl;
-	std::cout << this->contact[option].getNickname() << std::endl;
-	std::cout << this->contact[option].getPhoneNumber() << std::endl;
-	std::cout << this->contact[option].getDarkestSecret() << std::endl;
+	std::cout << "First Name: " << this->contact[option].getFirstName() << std::endl;
+	std::cout << "Last Name: " << this->contact[option].getLastName() << std::endl;
+	std::cout << "Nickname: " << this->contact[option].getNickname() << std::endl;
+	std::cout << "PhoneNumber: " << this->contact[option].getPhoneNumber() << std::endl;
+	std::cout << "Darkest Secret: " << this->contact[option].getDarkestSecret() << std::endl;
 }
