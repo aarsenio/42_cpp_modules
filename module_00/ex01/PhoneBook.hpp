@@ -5,15 +5,11 @@
 # include <cstdlib>
 # include <iomanip>
 
-struct data {
-    std::string value;
-};
-
 class PhoneBook
 {
     private:
         Contact contact[8];
-		struct data data[5];
+		std::string value[5];
         int	i;
         void setElement(std::string element, int i);
         void setContact(void);

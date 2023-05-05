@@ -14,18 +14,18 @@ PhoneBook::~PhoneBook(void)
 void	PhoneBook::setElement(std::string element, int i)
 {
 	std::cout << element << std::endl;
-	getline(std::cin, this->data[i].value);
+	getline(std::cin, this->value[i]);
 	if (std::cin.eof())
         return ;
 }
 
 void PhoneBook::setContact(void)
 {
-	this->contact[this->i].setFirstName(this->data[0].value);
-    this->contact[this->i].setLastName(this->data[1].value);
-    this->contact[this->i].setNickname(this->data[2].value);
-    this->contact[this->i].setPhoneNumber(this->data[3].value);
-    this->contact[this->i].setDarkestSecret(this->data[4].value);
+	this->contact[this->i].setFirstName(this->value[0]);
+    this->contact[this->i].setLastName(this->value[1]);
+    this->contact[this->i].setNickname(this->value[2]);
+    this->contact[this->i].setPhoneNumber(this->value[3]);
+    this->contact[this->i].setDarkestSecret(this->value[4]);
 }
 
 void	PhoneBook::ADD(void)
@@ -37,7 +37,7 @@ void	PhoneBook::ADD(void)
     this->setElement("Enter the phone number: ", 3);
     this->setElement("Enter the darkest secret: ", 4);
 	for (int i = 0; i < 5; i++)	{
-		if (this->data[i].value.empty()) {
+		if (this->value[i].empty()) {
 			std::cout << "Invalid Input" << std::endl;
 			return ;
 		}
