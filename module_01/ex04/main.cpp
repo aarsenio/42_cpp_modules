@@ -37,7 +37,7 @@ int	main(int ac, char **av)
 		return error("Wrong number of arguments");
 	if (!av[2][0] || !av[3][0])
         return error("Strings must not be empty");
-	if (!((std::string)av[2]).compare(av[3]))
+	if ((std::string)av[2] == (std::string)av[3])
         return error("The strings must not be equal");
 	inFile.open(av[1], std::ios::in);
 	if (!inFile.is_open())
@@ -48,7 +48,7 @@ int	main(int ac, char **av)
 	if (!outFile.is_open())
 	{
         inFile.close();
-        return (1);
+        return error("Error opening outFile");
     }
 	content_replace(inFile, outFile, (const std::string)av[2], (const std::string)av[3]);
 	inFile.close();
