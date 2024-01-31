@@ -1,9 +1,9 @@
 SRC		=	main.cpp \
-			Harl.cpp
+			ClapTrap.cpp \
 
 OBJ		=	$(SRC:.cpp=.o)
 
-NAME	=	Harl_2.0
+NAME	=	claptrap
 
 CC		=	g++
 

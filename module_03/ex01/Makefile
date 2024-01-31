@@ -1,8 +1,10 @@
-SRC		=	main.cpp
+SRC		=	main.cpp \
+			ClapTrap.cpp \
+			ScavTrap.cpp \
 
 OBJ		=	$(SRC:.cpp=.o)
 
-NAME	=	sedIsForLosers
+NAME	=	Scavtrap
 
 CC		=	g++
 

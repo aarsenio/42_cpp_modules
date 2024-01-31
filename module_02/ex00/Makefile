@@ -1,8 +1,9 @@
-SRC		=	main.cpp
+SRC		=	main.cpp \
+			Fixed.cpp \
 
 OBJ		=	$(SRC:.cpp=.o)
 
-NAME	=	hiThisIsBrain
+NAME	=	fixed
 
 CC		=	g++
 

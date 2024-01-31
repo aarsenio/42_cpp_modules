@@ -1,11 +1,9 @@
 SRC		=	main.cpp \
-			Weapon.cpp \
-			HumanA.cpp \
-			HumanB.cpp
+			Fixed.cpp \
 
 OBJ		=	$(SRC:.cpp=.o)
 
-NAME	=	unnecessaryViolence
+NAME	=	fixed
 
 CC		=	g++
 
