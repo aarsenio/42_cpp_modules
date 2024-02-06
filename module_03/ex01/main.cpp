@@ -1,6 +1,7 @@
 #include "ScavTrap.hpp"
 
-int main ( void ) {
+int main (void)
+{
 	ClapTrap a("Henrique");
 	a.attack("Marcos");
 	a.attack("Joao");
