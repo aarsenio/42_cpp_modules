@@ -15,7 +15,7 @@ Fixed::Fixed(const Fixed& copy)
 Fixed::Fixed(const int& value)
 {
 	std::cout << "Int constructor called" << std::endl;
-	fixed = value << bits;
+	fixed = value * (1 << bits);
 }
 
 Fixed::Fixed(const float& value)
