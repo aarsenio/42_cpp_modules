@@ -49,7 +49,7 @@ void	Fixed::setRawBits(int const raw)
 
 int		Fixed::toInt(void) const 
 {
-	return (fixed / 1 >> bits);
+	return (fixed / (1 << bits));
 }
 
 float	Fixed::toFloat(void) const
@@ -101,7 +101,7 @@ Fixed Fixed::operator-- ()
 Fixed Fixed::operator++ (int)
 {
 	Fixed temp(*this);
-	temp.operator++();
+	this->operator++();
 	return (temp);
 }
 
@@ -109,7 +109,7 @@ Fixed Fixed::operator++ (int)
 Fixed Fixed::operator-- (int)
 {
 	Fixed temp(*this);
-	temp.operator--();
+	this->operator++();
 	return (temp);
 }
 
