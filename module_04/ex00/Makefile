@@ -1,11 +1,9 @@
 SRC		=	main.cpp \
-			ClapTrap.cpp \
-			ScavTrap.cpp \
-			FragTrap.cpp \
+			 \
 
 OBJ		=	$(SRC:.cpp=.o)
 
-NAME	=	diamondtrap
+NAME	=	animal
 
 CC		=	g++
 
