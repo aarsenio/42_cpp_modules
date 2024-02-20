@@ -70,7 +70,7 @@ Fixed Fixed::operator+(const Fixed& copy)
 
 Fixed Fixed::operator-(const Fixed& copy)
 { 
-	return (this->toFloat() + copy.toFloat());
+	return (this->toFloat() - copy.toFloat());
 }
 
 Fixed Fixed::operator*(const Fixed& copy)
@@ -109,7 +109,7 @@ Fixed Fixed::operator++ (int)
 Fixed Fixed::operator-- (int)
 {
 	Fixed temp(*this);
-	this->operator++();
+	this->operator--();
 	return (temp);
 }
 
@@ -120,7 +120,7 @@ bool Fixed::operator>(const Fixed& copy)
 
 bool Fixed::operator<(const Fixed& copy)
 {
-	return (!operator>(copy.fixed));
+	return (this->fixed < copy.fixed);
 }
 
 bool Fixed::operator>=(const Fixed& copy)
