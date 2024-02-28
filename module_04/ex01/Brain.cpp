@@ -1,19 +1,24 @@
-#ifndef Brain_HPP
-# define Brain_HPP
+#include "Brain.hpp"
 
-# include <iostream>
-
-class Brain
+Brain::Brain()
 {
-	protected:
-		std::string ideas[100];
+	std::cout << "Brain Constructor" << std::endl;
+}
 
-	public:
-		Brain(void);
-		Brain(const Brain& obj);
-		Brain& operator=(const Brain& obj);
-		virtual ~Brain(void);
+Brain::Brain(const Brain &copy)
+{
+	std::cout << "Brain Copy Constructor" << std::endl;
+	*this = copy;
+}
 
-};
+Brain& Brain::operator=(const Brain &copy)
+{
+	for (int i = 0; i < 100; i++)
+        this->ideas[i] = copy.ideas[i];
+	return *this;
+}
 
-#endif
+Brain::~Brain()
+{
+	std::cout << "Brain Destructor" << std::endl;
+}
