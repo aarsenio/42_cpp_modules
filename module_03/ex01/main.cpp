@@ -9,6 +9,7 @@ int main (void)
 	ScavTrap b("Gabriel");
 	ScavTrap c(b);
 	b.attack ("Henrique");
+	b.beRepaired(30);
 	b.guardGate();
 	b.guardGate();
 }

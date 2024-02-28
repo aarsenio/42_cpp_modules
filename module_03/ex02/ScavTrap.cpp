@@ -3,17 +3,15 @@
 ScavTrap::ScavTrap(void)
 {
 	std::cout << "ScavTrap " << name << " constructor called" << std::endl;
-	this->name = "";
 	this->attackDamage = 20;
 	this->energyPoints = 50;
 	this->hitPoints = 100;
 	this->gateKeeper = 0;
 }
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 {
 	std::cout << "ScavTrap " << name << " constructor called" << std::endl;
-	this->name = name;
 	this->attackDamage = 20;
 	this->energyPoints = 50;
 	this->hitPoints = 100;
@@ -53,7 +51,6 @@ void	ScavTrap::attack(const std::string& target)
 		return ;
 	}
 	std::cout << "ScavTrap " << this->name << " attacks " << target << ", causing " << this->attackDamage << " points of damage!" << std::endl;
-	takeDamage( this->attackDamage );
 	this->energyPoints--;
 }
 
