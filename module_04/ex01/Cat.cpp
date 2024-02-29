@@ -17,6 +17,9 @@ Cat& Cat::operator=(const Cat& obj)
 {
     std::cout << "Cat assignement overload called" << std::endl;
     this->type = obj.type;
+    if (brain)
+        delete brain;
+    brain = new Brain(*obj.brain);
     return *this;
 }
 
@@ -29,4 +32,14 @@ Cat::~Cat(void)
 void    Cat::makeSound(void) const
 {
     std::cout << "MIAU" << std::endl;
+}
+
+void	Cat::learn(std::string idea)
+{
+    this->brain->learnIdea(idea);
+}
+
+void	Cat::think(void) const
+{
+    this->brain->think();
 }

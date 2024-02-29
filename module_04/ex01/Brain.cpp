@@ -22,3 +22,26 @@ Brain::~Brain()
 {
 	std::cout << "Brain Destructor" << std::endl;
 }
+
+void	Brain::learnIdea(std::string idea)
+{
+	int i = 0;
+	while (!ideas[i].empty())
+		i++;
+	if (i < 100)
+		ideas[i] = idea;
+	else
+		std::cout << "the brain is full" << std::endl;
+}
+
+void	Brain::think(void) const
+{
+	int i = -1;
+	if (ideas[0].empty())
+	{
+		std::cout << "the brain is empty" << std::endl;
+		return ;
+	}
+	while (!ideas[++i].empty())
+		std::cout << ideas[i] << std::endl;
+}
